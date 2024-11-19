@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#films">Filme</a></li>
+                <li><a href="#planets">Planeten</a></li>
+                <li><a href="#people">Personen</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="films">
+            <h2>Filme</h2>
+            <input type="text" id="filmSearch" placeholder="Film suchen">
+            <ul id="filmList"></ul>
+        </section>
+
+        <section id="planets">
+            <h2>Planeten</h2>
+            <input type="text" id="planetSearch" placeholder="Planet suchen">
+            <ul id="planetList"></ul>
+        </section>
+
+        <section id="people">
+            <h2>Personen</h2>
+            <input type="text" id="peopleSearch" placeholder="Person suchen">
+            <ul id="peopleList"></ul>
+        </section>
+    </main>
+
+    <script type="module" src="./app.ts"></script>
+</body>
+</html>
