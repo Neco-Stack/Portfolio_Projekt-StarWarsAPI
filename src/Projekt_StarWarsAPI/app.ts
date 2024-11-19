@@ -29,7 +29,7 @@ function displayFilms(films: IFilms[]) {
         console.error("Element mit ID 'filmList' nicht gefunden");
         return
     }
-    filmList.innerHTML = '';
+    filmList.innerHTML = ' ';
     films.forEach(film => {
         const li = document.createElement('li');
         li.innerHTML = `
@@ -77,6 +77,7 @@ function displayPlanets(planets: IPlanets[]) {
             <p>Bevölkerung: ${planet.population}</p>
             <p>Erstellt am: ${new Date(planet.created).toDateString()}</p>
         `;
+
         planetList.appendChild(li);
     })
 }
