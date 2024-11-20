@@ -1,4 +1,4 @@
-import { IFilms, IPeople, IPlanets } from './Interfaces/IStarWarsResponse';
+import { IFilms, IPeople, IPlanets } from './IStarWarsResponse';
 
 const BASE_URL = 'https://swapi.dev/api/'
 
@@ -123,16 +123,19 @@ function displayPeople(persons: IPeople[]) {
 
 document.querySelector('a[href="#planets"]')?.addEventListener('click', (event) => {
     event.preventDefault();
+    showCategory('planets');
     fetchPlanets().catch(error => console.error("Fehler beim Laden der Planeten", error));
     });
 
     document.querySelector('a[href="#people"]')?.addEventListener('click', (event) => {
         event.preventDefault();
+        showCategory('people')
         fetchPeople().catch(error => console.error("Fehler beim Laden der Personen", error));
         });
 
         document.querySelector('a[href="#films"]')?.addEventListener('click', (event) => {
             event.preventDefault();
+            showCategory('films')
             fetchFilms().catch(error => console.error("Fehler beim Laden der Filme", error));
         })
 
@@ -176,3 +179,17 @@ document.getElementById('peopleSearch')?.addEventListener('input', (event) => {
         })
     } 
 })
+function showCategory(categoryId: string) {
+    const categories = ['films', 'planets', 'people']
+    categories.forEach(cat => {
+        const element = document.getElementById(cat);
+        if(element) {
+            if (cat === categoryId) {
+                element.style.display= 'block';
+                element.parentElement?.prepend(element)
+            } else {
+                element.style.display = 'none'
+            }
+        }
+    })
+}
